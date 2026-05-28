@@ -14,12 +14,13 @@ body {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #nav-logo {
-    font-size: x-large;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: deepskyblue;
+    color: dodgerblue;
     letter-spacing: 0.5px;
 }
 
@@ -28,6 +29,7 @@ body {
 }
 
 .nav-links {
+    /* hide bullets */
     list-style: none;
     display: flex;
     align-items: center;
@@ -36,7 +38,33 @@ body {
 .nav-item {
     margin-left: 1.5rem;
     text-decoration: none;
-    color: blue;
+    color: dimgray;
     font-weight: 500;
     padding: 0.5rem 0;
+}
+
+.nav-item:hover {
+    color: dodgerblue;
+}
+
+.nav-item.active {
+    color: dodgerblue;
+    border-bottom: 2px solid dodgerblue;
+}
+
+.btn-logout {
+    background: none;
+    border: 2px solid darkred;
+    color: darkred;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 1.5rem;
+}
+
+.btn-logout:hover {
+    background-color: darkred;
+    color: white;
 }
