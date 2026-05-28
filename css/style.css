@@ -6,8 +6,10 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(241, 238, 238);
 }
 
+/* Navbar */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -22,6 +24,7 @@ body {
     font-weight: bold;
     color: dodgerblue;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .navbar {
@@ -52,9 +55,66 @@ body {
     border-bottom: 2px solid dodgerblue;
 }
 
+.btn-logout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+/* Dashboard */
+.dashboard {
+    padding: 2rem;
+}
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.card-footer {
+    margin-top: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: dodgerblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+}
+
 .btn-logout {
     background: none;
-    border: 2px solid darkred;
+    border: 1px solid darkred;
     color: darkred;
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -62,9 +122,4 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     margin-left: 1.5rem;
-}
-
-.btn-logout:hover {
-    background-color: darkred;
-    color: white;
 }
