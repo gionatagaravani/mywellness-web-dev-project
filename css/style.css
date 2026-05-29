@@ -100,6 +100,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(to bottom, #4f8eeb, #142a49);
 }
 
 .login-card {
@@ -114,6 +115,12 @@ body {
 
 .login-title {
     font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.login-info {
+    font-size: 0.8rem;
+    color: gray;
     margin-bottom: 1rem;
 }
 
