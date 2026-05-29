@@ -1,4 +1,5 @@
 (function() {
+
     // Check authentication state immediately to prevent "flash of unauthenticated content"
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const isLoginPage = window.location.pathname.toLowerCase().includes('login.html');
@@ -23,7 +24,9 @@
 
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('username', username);
-                window.location.href = 'index.html';
+                showToast('Signed in successfully', 'success').then(() => {
+                    window.location.href = 'index.html';
+                }); 
             });
         }
 
@@ -34,7 +37,9 @@
                 e.preventDefault();
                 localStorage.removeItem('isLoggedIn');
                 localStorage.removeItem('username');
-                window.location.href = 'login.html';
+                showToast('Signed out successfully', 'info').then(() => {
+                    window.location.href = 'login.html';
+                });
             });
         });
     });
