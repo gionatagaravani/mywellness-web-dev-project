@@ -37,6 +37,10 @@
                 e.preventDefault();
                 localStorage.removeItem('isLoggedIn');
                 localStorage.removeItem('username');
+                localStorage.removeItem('email');
+                localStorage.removeItem('fitnessGoal');
+                localStorage.removeItem('bio');
+                localStorage.removeItem('avatar');
                 showToast('Signed out successfully', 'info').then(() => {
                     window.location.href = 'login.html';
                 });
