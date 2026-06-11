@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Workout Exercise - My Wellness</title>
+    <meta name="description" content="Add or edit a workout exercise details in your personal routine on My Wellness.">
+    <meta name="author" content="Gionata Garavani">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div>
+            <span id="nav-logo">My Wellness</span>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Dashboard</a></li>
+                <li><a href="workout.html" class="nav-item active">Workout</a></li>
+                <li><a href="booking.html" class="nav-item">Book a Treatment</a></li>
+                <li><a href="profile.html" class="nav-item">Profile</a></li>
+                <li><button class="btn-logout">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <h2 class="dashboard-title" id="page-title">Add Exercise</h2>
+        </div>
+        
+        <div class="dashboard-grid grid-center">
+            <div class="card card-form">
+                <h3 class="card-title" id="form-card-title">Exercise Details</h3>
+                <div class="card-body">
+                    <form id="exercise-form">
+                        <div class="form-group">
+                            <label for="exercise-name">Exercise Name</label>
+                            <input type="text" id="exercise-name" required placeholder="e.g. Bench Press">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="exercise-category">Category</label>
+                                <select id="exercise-category">
+                                    <option value="Strength">Strength</option>
+                                    <option value="Cardio">Cardio</option>
+                                    <option value="Core">Core</option>
+                                    <option value="Flexibility">Flexibility</option>
+                                    <option value="Balance">Balance</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="exercise-difficulty">Difficulty</label>
+                                <select id="exercise-difficulty">
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exercise-muscle">Target Muscle Group(s)</label>
+                            <input type="text" id="exercise-muscle" placeholder="e.g. Chest, Triceps">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exercise-desc">Description</label>
+                            <textarea id="exercise-desc" rows="3" placeholder="Describe the proper form and steps..."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-third">
+                                <label for="exercise-sets">Sets</label>
+                                <input type="number" id="exercise-sets" min="1" value="3">
+                            </div>
+                            <div class="form-group col-third">
+                                <label for="exercise-reps">Reps</label>
+                                <input type="number" id="exercise-reps" min="1" value="12">
+                            </div>
+                            <div class="form-group col-third">
+                                <label for="exercise-duration">Duration (min)</label>
+                                <input type="number" id="exercise-duration" min="1" value="10">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="exercise-calories">Est. Calories (kcal)</label>
+                                <input type="number" id="exercise-calories" min="0" value="80">
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="exercise-intensity">Intensity</label>
+                                <select id="exercise-intensity">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <button type="submit" class="btn-primary">Save Exercise</button>
+                            <button type="button" id="btn-cancel" class="btn-secondary-outline">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/workout-edit.js"></script>
+</body>
+
+</html>

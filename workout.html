@@ -33,7 +33,19 @@
             </ul>
         </nav>
     </header>
+
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <h2 class="dashboard-title">Workout Plans</h2>
+            <button class="btn-primary" onclick="location.href='workout-edit.html'">Add Exercise</button>
+        </div>
+        <div class="dashboard-grid" id="exercises-container">
+            <p class="grid-full-width">Loading exercises...</p>
+        </div>
+    </main>
+
     <script src="js/script.js"></script>
+    <script src="js/workout.js"></script>
 </body>
 
 </html>

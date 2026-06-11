@@ -41,6 +41,8 @@
                 localStorage.removeItem('fitnessGoal');
                 localStorage.removeItem('bio');
                 localStorage.removeItem('avatar');
+                localStorage.removeItem('exercises');
+                localStorage.removeItem('exercises_loaded');
                 showToast('Signed out successfully', 'info').then(() => {
                     window.location.href = 'login.html';
                 });
