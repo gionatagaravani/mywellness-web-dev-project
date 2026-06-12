@@ -15,7 +15,7 @@
     window.showToast = (text, icon = 'success') => {
         return Swal.mixin({
             toast: true,
-            position: "top-end",
+            position: "bottom-end",
             showConfirmButton: false,
             timer: 1500,
             timerProgressBar: true

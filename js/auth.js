@@ -35,16 +35,30 @@
         logoutButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                localStorage.removeItem('isLoggedIn');
-                localStorage.removeItem('username');
-                localStorage.removeItem('email');
-                localStorage.removeItem('fitnessGoal');
-                localStorage.removeItem('bio');
-                localStorage.removeItem('avatar');
-                localStorage.removeItem('exercises');
-                localStorage.removeItem('exercises_loaded');
-                showToast('Signed out successfully', 'info').then(() => {
-                    window.location.href = 'login.html';
+
+                Swal.fire({
+                    title: 'Sign out?',
+                    text: 'Are you sure you want to sign out of your account?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#8b0000',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'Yes, sign out',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        localStorage.removeItem('isLoggedIn');
+                        localStorage.removeItem('username');
+                        localStorage.removeItem('email');
+                        localStorage.removeItem('fitnessGoal');
+                        localStorage.removeItem('bio');
+                        localStorage.removeItem('avatar');
+                        localStorage.removeItem('exercises');
+                        localStorage.removeItem('exercises_loaded');
+                        showToast('Signed out successfully', 'info').then(() => {
+                            window.location.href = 'login.html';
+                        });
+                    }
                 });
             });
         });
