@@ -394,3 +394,156 @@ body {
 .card-footer-actions button {
     flex: 1;
 }
+
+/* ==========================================================================
+   Media Queries & Responsive Design
+   ========================================================================== */
+
+/* --- Tablet Devices (max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    /* Main Header and Navigation stacking */
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .navbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+
+    .btn-logout {
+        margin-left: 0.75rem;
+    }
+
+    /* Dashboard Layout & Spacing adjustment */
+    .dashboard {
+        padding: 1.5rem 1rem;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .dashboard-grid {
+        gap: 1.25rem;
+    }
+
+    /* Responsive Cards */
+    .card {
+        min-width: 100%;
+        /* Make cards span full width of container */
+        margin-bottom: 1rem;
+    }
+
+    /* Override inline flex basis on Profile page cards to stack them vertically */
+    .dashboard-grid>.card[style*="flex: 1"],
+    .dashboard-grid>.card[style*="flex: 2"] {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+
+    /* Login Screen Responsiveness */
+    .login-container {
+        padding: 1rem;
+        min-height: 100dvh;
+        /* Accounts for mobile browser dynamic UI address bar */
+        height: auto;
+        /* Prevents card truncation on short viewports */
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 480px;
+        /* Constrains width cleanly on tablets instead of 75vh */
+        padding: 1.5rem;
+    }
+}
+
+/* --- Mobile Portrait Devices (max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+
+    /* Stacking header menu links vertically for small mobile displays */
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .nav-item {
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-item.active {
+        border-bottom: 2px solid dodgerblue;
+    }
+
+    .btn-logout {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    /* Tighter page spacing on small screens */
+    .dashboard {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    /* Form field layout stacking for readability on narrow mobile screens */
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-row .form-group.col-half,
+    .form-row .form-group.col-third {
+        min-width: 100%;
+    }
+
+    /* Vertically stacked full-width button actions in cards (Save / Cancel) */
+    .card-footer-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .card-footer-actions button {
+        width: 100%;
+    }
+
+    /* Adjust profile avatar picker layout */
+    .avatar-picker {
+        gap: 0.35rem;
+    }
+
+    .avatar-option {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}
