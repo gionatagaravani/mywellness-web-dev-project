@@ -21,8 +21,8 @@
 
         // Load profile data from localStorage
         function loadProfile() {
-            const savedUsername = localStorage.getItem('username') || 'Gionata';
-            const savedEmail = localStorage.getItem('email') || 'gionata@example.com';
+            const savedUsername = localStorage.getItem('username');
+            const savedEmail = localStorage.getItem('email') || 'mail@example.com';
             const savedGoal = localStorage.getItem('fitnessGoal') || 'Stay Healthy';
             const savedBio = localStorage.getItem('bio') || 'Fitness enthusiast and spa lover.';
             const savedAvatar = localStorage.getItem('avatar') || '👤';

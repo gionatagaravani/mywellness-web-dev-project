@@ -55,6 +55,8 @@
                         localStorage.removeItem('avatar');
                         localStorage.removeItem('exercises');
                         localStorage.removeItem('exercises_loaded');
+                        localStorage.removeItem('bookings');
+                        localStorage.removeItem('bookings_initialized');
                         showToast('Signed out successfully', 'info').then(() => {
                             window.location.href = 'login.html';
                         });
