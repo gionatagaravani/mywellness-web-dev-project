@@ -76,6 +76,62 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Motivational Marquee */
+.motivation-marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+}
+
+.motivation-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-right 35s linear infinite;
+}
+
+.marquee-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.motivation-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #ffffff;
+    border: 1px solid rgba(30, 144, 255, 0.12);
+    border-radius: 50px;
+    padding: 0.6rem 1.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.motivation-badge .text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+}
+
+/* Micro-animations */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .dashboard-grid {
     display: flex;
     gap: 2rem;
@@ -431,7 +487,8 @@ body {
     }
 
     .navbar {
-        display: none; /* Hidden by default on mobile/tablet */
+        display: none;
+        /* Hidden by default on mobile/tablet */
         position: absolute;
         top: 100%;
         left: 0;
@@ -445,7 +502,8 @@ body {
     }
 
     .navbar.active {
-        display: flex; /* Toggle visibility via JS class */
+        display: flex;
+        /* Toggle visibility via JS class */
     }
 
     .nav-links {

@@ -30,6 +30,42 @@
                 dashboardTitle.textContent = `Good day, ${username}!`;
             }
 
+            // Initialize motivational marquee
+            const marqueeTrack = document.getElementById('motivation-marquee-track');
+            if (marqueeTrack) {
+                const marqueeQuotes = [
+                    { text: "Every workout counts!", icon: "💪" },
+                    { text: "Hydrate & keep moving!", icon: "💧" },
+                    { text: "Progress, not perfection", icon: "🧗" },
+                    { text: "Take a deep breath", icon: "🧘" },
+                    { text: "Convince your mind", icon: "🧠" },
+                    { text: "Recharge & rest today", icon: "🛌" },
+                    { text: "Consistency is key!", icon: "🎯" },
+                    { text: "Fuel with wholesome food", icon: "🍎" },
+                    { text: "Every effort matters!", icon: "🌟" },
+                    { text: "Stretch and relax", icon: "🤸" }
+                ];
+
+                const createGroup = () => {
+                    const group = document.createElement('div');
+                    group.className = 'marquee-group';
+                    marqueeQuotes.forEach(q => {
+                        const badge = document.createElement('div');
+                        badge.className = 'motivation-badge';
+                        badge.innerHTML = `
+                            <span class="emoji">${q.icon}</span>
+                            <span class="text">${q.text}</span>
+                        `;
+                        group.appendChild(badge);
+                    });
+                    return group;
+                };
+
+                // Add double set of groups for smooth infinite scrolling loop
+                marqueeTrack.appendChild(createGroup());
+                marqueeTrack.appendChild(createGroup());
+            }
+
             // Render bookings dynamically
             const dashboardGrid = document.getElementById('dashboard-grid');
             if (dashboardGrid) {
